@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Place Order: {{ product.name }}</h2>
+    <p>Price: ₹{{ product.price }} | Stock Available: {{ product.stock }}</p>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label>Quantity</label>
+            <input type="number" name="quantity" min="1" max="{{ product.stock }}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Place Order</button>
+    </form>
+</div>
+{% endblock %}
+

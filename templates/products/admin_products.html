@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">All Products (Admin)</h2>
+
+  {% if products %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Seller ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.seller_id }}</td>
+        <td>
+          <!-- Delete button for admin and seller -->
+          <a href="{{ url_for('products.delete_product', product_id=product.id) }}" 
+             class="btn btn-danger btn-sm">
+             <i class="bi bi-trash"></i> Delete
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No products available.</p>
+  {% endif %}
+</div>
+{% endblock %}
+

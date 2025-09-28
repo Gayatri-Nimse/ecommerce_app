@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2>Edit Product</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Product Name</label>
+      <input type="text" class="form-control" name="name" value="{{ product.name }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" step="0.01" class="form-control" name="price" value="{{ product.price }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Stock</label>
+      <input type="number" class="form-control" name="stock" value="{{ product.stock }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Product</button>
+    <a href="{{ url_for('products.seller_dashboard_products') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
+
+

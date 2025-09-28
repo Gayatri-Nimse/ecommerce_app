@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Welcome, {{ current_user.username }}!</h2>
+
+  <div class="row">
+    <!-- Browse Products -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-shop display-4 text-success mb-3"></i>
+          <h5 class="card-title">Browse Products</h5>
+          <p class="card-text">Explore and buy products from different sellers.</p>
+          <a href="{{ url_for('products.all_products') }}" class="btn btn-success">
+            View Products
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Orders -->
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-bag-check display-4 text-primary mb-3"></i>
+          <h5 class="card-title">My Orders</h5>
+          <p class="card-text">Track your past and ongoing orders.</p>
+          <a href="{{ url_for('orders.my_orders') }}" class="btn btn-primary">
+            View Orders
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

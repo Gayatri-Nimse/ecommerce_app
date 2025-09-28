@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4" style="color:#2c3e50;">Available Products</h2>
+
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">Price: ₹{{ product.price }}</p>
+                    <p class="card-text">Stock: {{ product.stock }}</p>
+                    {% if current_user.is_authenticated and current_user.role == 'customer' %}
+                        <a href="{{ url_for('orders.buy_product', product_id=product.id) }}" class="btn btn-success">
+                            <i class="bi bi-bag-plus"></i> Buy Now
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+

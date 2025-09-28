@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Admin Dashboard</h2>
+
+  <div class="row">
+    <!-- Manage Users -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-people-fill display-4 text-primary mb-3"></i>
+          <h5 class="card-title">Manage Users</h5>
+          <a href="{{ url_for('users.admin_manage_users') }}" class="btn btn-primary">View Users</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manage Products -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-box-seam display-4 text-success mb-3"></i>
+          <h5 class="card-title">Manage Products</h5>
+          <a href="{{ url_for('products.all_products') }}" class="btn btn-success">View Products</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Orders -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg border-0 rounded-3 h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-bag-check display-4 text-warning mb-3"></i>
+          <h5 class="card-title">View Orders</h5>
+          <a href="{{ url_for('orders.all_orders') }}" class="btn btn-warning">View Orders</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+

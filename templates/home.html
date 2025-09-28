@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="text-center py-5 bg-light">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-primary">Welcome to Mini E-Commerce</h1>
+    <p class="lead text-muted">Shop the best products from trusted sellers. Fast, secure, and easy!</p>
+    <div class="mt-4">
+      <a href="{{ url_for('users.register') }}" class="btn btn-success btn-lg me-3">
+        <i class="bi bi-person-plus"></i> Register
+      </a>
+      <a href="{{ url_for('users.login') }}" class="btn btn-primary btn-lg">
+        <i class="bi bi-box-arrow-in-right"></i> Login
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="container my-5">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <i class="bi bi-bag-check-fill text-success" style="font-size: 3rem;"></i>
+      <h3 class="mt-3">Easy Shopping</h3>
+      <p class="text-muted">Browse products and place your order in just a few clicks.</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-shop text-primary" style="font-size: 3rem;"></i>
+      <h3 class="mt-3">Trusted Sellers</h3>
+      <p class="text-muted">Our sellers provide quality products with secure checkout.</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-truck text-warning" style="font-size: 3rem;"></i>
+      <h3 class="mt-3">Fast Delivery</h3>
+      <p class="text-muted">Your orders reach you quickly with reliable shipping partners.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="text-center py-5 bg-primary text-white">
+  <div class="container">
+    <h2 class="fw-bold">Ready to Start Shopping?</h2>
+    <p class="lead">Join now and explore our latest products!</p>
+    <a href="{{ url_for('users.register') }}" class="btn btn-light btn-lg mt-3">
+      <i class="bi bi-cart4"></i> Get Started
+    </a>
+  </div>
+</section>
+{% endblock %}
+
+
